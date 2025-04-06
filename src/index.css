@@ -1,0 +1,83 @@
+button {
+  cursor: pointer;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: start;
+  width: 500px;
+  margin: 0 auto;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+.editForm {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  right: 0;
+}
+
+.form *,
+.editForm * {
+  width: 500px;
+  padding: 10px;
+  height: 100%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+}
+.task-filter {
+  width: 500px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.task-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.task-list h2 {
+  font-size: 25px;
+  color: rgb(152, 152, 152);
+}
+.task-list p .completed {
+  text-decoration: underline;
+  color: rgb(11, 138, 7);
+  font-weight: bolder;
+}
+.task-list p .todo {
+  color: rgb(217, 98, 12);
+  font-weight: bolder;
+  text-decoration: underline;
+}
+
+.task-list .buttons {
+  display: flex;
+  gap: 10px;
+}
+.task-list button[name='edit'] {
+  background-color: rgb(18, 125, 161);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+}
+.task-list button[name='delete'] {
+  background-color: rgb(182, 19, 19);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+}
+.no-task-alert {
+  color: crimson;
+  font-size: larger;
+}
