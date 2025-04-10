@@ -4,13 +4,15 @@ import { v4 as uuid4 } from 'uuid';
 import { addTask, editTask } from '../Redux/taskSlice';
 
 const Form = ({ isEditing, setIsEditing, task }) => {
-  const [taskName, setTaskName] = useState(task?.title);
-  const [taskDescription, setTaskDescription] = useState(task?.description);
-  const [taskStatus, setTaskStatus] = useState(task?.status);
+  const [taskName, setTaskName] = useState(task?.title || '');
+  const [taskDescription, setTaskDescription] = useState(
+    task?.description || '',
+  );
+  const [taskStatus, setTaskStatus] = useState(task?.status || '');
 
   const dispatch = useDispatch();
 
-  function handleSubmit(e) {
+  function handleAddTask(e) {
     e.preventDefault();
     if (taskName === '' || taskDescription === '') {
       return;
@@ -44,7 +46,7 @@ const Form = ({ isEditing, setIsEditing, task }) => {
     };
     console.log(editTasks);
     dispatch(editTask(editTasks));
-    setIsEditing(!isEditing);
+    setIsEditing(false);
   }
 
   return (
@@ -52,7 +54,7 @@ const Form = ({ isEditing, setIsEditing, task }) => {
       <form
         className={`${isEditing ? 'editForm' : 'form'}`}
         action=""
-        onSubmit={handleSubmit}
+        onSubmit={handleAddTask}
       >
         <input
           value={taskName}

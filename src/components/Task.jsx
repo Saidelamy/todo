@@ -69,7 +69,7 @@ const Task = () => {
               </p>
             </div>
             <div className="buttons">
-              <Edit task={task} />
+              <Edit it task={task} />
               <button name="delete" onClick={() => handleDelete(task?.id)}>
                 Delete
               </button>
