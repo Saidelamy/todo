@@ -8,7 +8,7 @@ const Edit = ({ task }) => {
       {isEditing ? (
         <Form isEditing={isEditing} setIsEditing={setIsEditing} task={task} />
       ) : (
-        <button name="edit" onClick={() => setIsEditing(false)}>
+        <button name="edit" onClick={() => setIsEditing(!isEditing)}>
           Edit
         </button>
       )}
